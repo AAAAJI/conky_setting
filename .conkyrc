@@ -1,0 +1,76 @@
+
+background no
+update_interval 1
+
+cpu_avg_samples 2
+net_avg_samples 2
+
+override_utf8_locale yes
+
+double_buffer yes
+
+# Window specifications #
+own_window_class Conky
+own_window yes
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_argb_visual yes
+
+border_inner_margin 0
+border_outer_margin 0
+
+minimum_size 540 900
+maximum_width 540
+
+alignment tr
+-- gap_x 20
+gap_y 20
+
+# Graphics settings #
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# Text settings #
+use_xft yes
+xftalpha 0.9
+
+# color #
+color1 FFFFFF
+
+# Lua Load #
+lua_load ~/.conky/conky_dashboard.lua
+lua_draw_hook_pre rings_stats
+
+TEXT
+# cpu #
+${color1}${font caviar dreams:size=12}${goto 100}${voffset 9}CPU${alignr 330}${cpu cpu0}%
+${color1}${font caviar dreams:size=9}${goto 100}${voffset 1}CPU 0${alignr 330}${cpu cpu1}%
+${color1}${font caviar dreams:size=9}${goto 100}${voffset 2}CPU 1${alignr 330}${cpu cpu2}%
+${color1}${font caviar dreams:size=9}${goto 100}${voffset 2}CPU 2${alignr 330}${cpu cpu3}%
+${color1}${font caviar dreams:size=9}${goto 100}${voffset 2}CPU 3${alignr 330}${cpu cpu4}%
+
+${color1}${font caviar dreams:size=8}${goto 20} PID ${goto 70}Process ${alignr 300}Percent
+${color1}${font caviar dreams:size=8}${goto 20}${top pid 1}${goto 70}${top name 1}${alignr 300}${top cpu 1}%
+${color1}${font caviar dreams:size=8}${goto 20}${top pid 2}${goto 70}${top name 2}${alignr 300}${top cpu 2}%
+${color1}${font caviar dreams:size=8}${goto 20}${top pid 3}${goto 70}${top name 3}${alignr 300}${top cpu 3}%
+${color1}${font caviar dreams:size=8}${goto 20}${top pid 4}${goto 70}${top name 4}${alignr 300}${top cpu 4}%
+${color1}${font caviar dreams:size=8}${goto 20}${top pid 5}${goto 70}${top name 5}${alignr 300}${top cpu 5}%
+
+# memory #
+${color1}${font caviar dreams:size=8}${goto 280}${voffset 160} PID ${goto 330}Process ${alignr 40}Percent
+${color1}${font caviar dreams:size=8}${goto 280}${top_mem pid 1}${goto 330}${top_mem name 1}${alignr 40}${top_mem mem 1}%
+${color1}${font caviar dreams:size=8}${goto 280}${top_mem pid 2}${goto 330}${top_mem name 2}${alignr 40}${top_mem mem 2}%
+${color1}${font caviar dreams:size=8}${goto 280}${top_mem pid 3}${goto 330}${top_mem name 3}${alignr 40}${top_mem mem 3}%
+${color1}${font caviar dreams:size=8}${goto 280}${top_mem pid 4}${goto 330}${top_mem name 4}${alignr 40}${top_mem mem 4}%
+${color1}${font caviar dreams:size=8}${goto 280}${top_mem pid 5}${goto 330}${top_mem name 5}${alignr 40}${top_mem mem 5}%
+
+${color1}${font caviar dreams:size=10}${goto 320}${voffset 5}SWAP${alignr 40}${swap} / ${swapmax}
+${color1}${font caviar dreams:size=10}${goto 320}${voffset 2}RAM${alignr 40}${mem} / ${memmax}
+
+
+${alignr}${color1}${font caviar dreams:size=12}${sysname}  ${kernel}  ${machine}
+${alignr}${color1}${font caviar dreams:size=12}Uptime: ${uptime_short}
+${alignr}${color1}${font caviar dreams:size=12}Processes: ${processes}
+${alignr}${color1}${font caviar dreams:size=12}Running: ${running_processes}
