@@ -4,6 +4,8 @@ Conky is a great system momitor, it can show what you want system information on
 
 It just try in VMware with Ubuntu 18.04, maybe will try in other system, maybe ......
 
+![](conky.PNG)
+
 ## install Conky
 > sudo apt update
 > sudo apt install conky-all
